@@ -18,6 +18,12 @@ macOS 메뉴바에서 돌아가는 시간 기록 앱입니다. 할 일을 등록
 ## 스크린샷
 
 <p align="center">
+  <img src="assets/screenshot-menu.png" alt="메뉴바의 Timora" width="540">
+</p>
+
+<p align="center"><em>메뉴바에 상주 — 진행 시간이 메뉴바에서 바로 흐르고, 시작/정지와 설정이 클릭 한 번 거리에 있어요.</em></p>
+
+<p align="center">
   <img src="assets/screenshot-report.png" alt="Timora 상세 보기" width="420">
 </p>
 

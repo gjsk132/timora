@@ -19,6 +19,12 @@ The interface is available in **English and Korean** — switch anytime from
 ## Screenshots
 
 <p align="center">
+  <img src="assets/screenshot-menu.png" alt="Timora in the menu bar" width="540">
+</p>
+
+<p align="center"><em>Lives in your menu bar — the timer ticks right in the bar; start/stop and settings are a click away.</em></p>
+
+<p align="center">
   <img src="assets/screenshot-report.png" alt="Timora detailed view" width="420">
 </p>
 
