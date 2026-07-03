@@ -62,6 +62,17 @@ cd timora
 - Click the icon to add tasks and start/stop timing.
 - For quick access, move `Timora.app` to your Dock or Applications folder.
 
+### Start automatically at login
+
+To have Timora launch every time you log in:
+
+1. Open  → **System Settings → General → Login Items**.
+2. Under **Open at Login**, click the **+** button.
+3. Select **`Timora.app`** (wherever you keep it — e.g. Applications) and click **Open**.
+
+Timora will now start on its own and sit in the menu bar after each login.
+To undo it, select Timora in the same list and click **−**.
+
 ## Settings
 
 Open the menu bar icon → **Settings**:

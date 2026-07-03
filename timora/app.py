@@ -25,7 +25,11 @@ THRESHOLDS = (5, 15, 30, 60)
 class Tracker(rumps.App):
     def __init__(self):
         super().__init__("Timora", title="📕")
-        self.quit_button = MI(t("quit"), "power")
+        # Disable rumps' built-in quit button (it is only appended once, at
+        # run(), so it vanishes on the first menu rebuild). We add our own
+        # quit item in build_menu() instead, wired to quit_application.
+        self.quit_button = None
+        self._quit_item = MI(t("quit"), "power", callback=rumps.quit_application)
         try:
             from AppKit import (NSApplication,
                                 NSApplicationActivationPolicyAccessory)
@@ -161,7 +165,6 @@ class Tracker(rumps.App):
     # ----- menu -----
     def build_menu(self):
         self.menu.clear()
-        self.quit_button.title = t("quit")
         self._task_map = {}
         self._del_map = {}
         self._edit_map = {}
@@ -212,6 +215,10 @@ class Tracker(rumps.App):
                 None,
                 self._settings_menu(),
             ]
+        # Re-add our quit item on every rebuild (build_menu clears the menu).
+        self._quit_item.title = t("quit")
+        self.menu.add(None)
+        self.menu.add(self._quit_item)
 
     def _entries_menu(self):
         mng = MI(t("edit_delete_records"), "arrow.uturn.backward")
