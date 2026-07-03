@@ -1,0 +1,7 @@
+#!/bin/bash
+# .app(LaunchServices)로 직접 exec 하면 메뉴바 슬롯이 배정되지 않는 문제가 있어,
+# 파이썬을 LaunchServices 앱 컨텍스트에서 분리(백그라운드)해 실행한다.
+DIR="$HOME/시간기록앱"
+cd "$DIR" || exit 1
+nohup "$DIR/venv/bin/python" "$DIR/tracker.py" >/dev/null 2>&1 &
+exit 0
