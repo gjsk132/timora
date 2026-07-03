@@ -1,18 +1,19 @@
-# 파이썬 가상환경 (각자 설치하기.command로 새로 만듦)
+# Python virtual environment (each user recreates it via install.command)
 venv/
 
-# 개인 기록 데이터 (사람마다 각자 쌓임)
+# Personal records (accumulate per user)
 data.json
 data.json.bak
 data.json.tmp
 
-# 실행 중 생성되는 파일들
+# Generated at runtime
 report.html
 .tracker.lock
+.appicon.png
 
 # macOS
 .DS_Store
 
-# 파이썬 캐시
+# Python cache
 __pycache__/
 *.pyc

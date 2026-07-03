@@ -1,27 +1,71 @@
-# 📕 시간기록 앱
+# Timora
 
-macOS 메뉴바에서 돌아가는 시간 기록 앱입니다. 할 일을 등록해두고 시작/정지로
-시간을 재고, 날짜·카테고리별 통계와 그래프를 볼 수 있어요.
+**English** · [한국어](README.ko.md)
 
-> macOS 전용입니다. (윈도우에서는 동작하지 않아요.)
+A native macOS menu bar time tracker. Register your tasks, start/stop a timer
+to record how long each one takes, and view totals, per-task estimates, and
+charts by day / week / month / year.
 
-## 설치 방법
+The interface is available in **English and Korean** — switch anytime from
+**Settings → Language** inside the app.
 
-1. 받은 폴더(`시간기록앱`)를 원하는 곳에 둡니다. (홈 폴더나 문서 폴더 추천)
-2. 폴더 안의 **`설치하기.command`** 파일을 **더블클릭**합니다.
-   - "확인되지 않은 개발자" 경고가 뜨면: 파일을 **우클릭 → 열기 → 열기** 를 누르세요.
-3. 터미널 창이 열리고 자동으로 설치가 진행됩니다. (1~2분)
-   - `python3 가 없습니다` 라고 나오면, 터미널에 `xcode-select --install` 을 실행해
-     개발자 도구를 먼저 깔고, 다시 `설치하기.command` 를 더블클릭하세요.
-4. "✅ 설치 완료" 가 뜨면 끝!
+> macOS only. (It does not run on Windows.)
 
-## 실행 방법
+## Install
 
-- **`시간기록.app`** 을 더블클릭하면 화면 위 메뉴바에 📕 아이콘이 생깁니다.
-- 아이콘을 클릭해 할 일을 등록하고 시작/정지하면 됩니다.
-- 자주 쓰려면 `시간기록.app` 을 Dock이나 응용 프로그램 폴더로 옮겨두세요.
+1. Download the project (Code → Download ZIP, or `git clone`) and unzip it
+   somewhere convenient (your home or Documents folder works well).
+2. Double-click **`install.command`** inside the folder.
+   - If macOS says "unidentified developer": **right-click → Open → Open**.
+3. A Terminal window opens and installs everything automatically (1–2 min).
+   - If it says `python3 not found`, run `xcode-select --install` in Terminal
+     to install the developer tools, then double-click `install.command` again.
+4. When you see "Done!", you're set.
 
-## 참고
+## Run
 
-- 내 기록은 이 폴더 안 `data.json` 에 저장됩니다. (자동 생성)
-- 폴더를 통째로 백업하면 기록도 함께 보관돼요.
+- Double-click **`Timora.app`**. A book icon appears in the menu bar.
+- Click the icon to add tasks and start/stop timing.
+- For quick access, move `Timora.app` to your Dock or Applications folder.
+
+## Settings
+
+Open the menu bar icon → **Settings**:
+
+- **Language** — English / 한국어
+- **Notifications** — turn notifications on/off
+- **Away detection** — get reminded when you leave your desk while recording
+- **Away threshold** — 5 / 15 / 30 / 60 minutes
+- **Open data folder** — reveal `data.json` in Finder for backup
+
+## Project layout
+
+```
+Timora.app/        macOS app bundle (launches the timora package)
+install.command    one-click setup: creates venv + installs deps
+requirements.txt   Python dependencies (rumps, pyobjc)
+timora/            application package
+├── __main__.py    entry point (python -m timora)
+├── config.py      paths and constants
+├── i18n.py        translations (English / Korean)
+├── formatting.py  time formatting / parsing helpers
+├── storage.py     Store: load / save / aggregate the database
+├── assets.py      app icon, SF Symbols, bundle identifier
+├── notifications.py
+├── menu.py        menu item helper
+├── system.py      idle detection
+├── instance.py    single-instance lock
+├── dialogs.py     AppKit input dialogs
+├── report.py      detailed-view HTML
+└── app.py         Tracker (rumps.App) controller
+```
+
+## Notes
+
+- Your records are stored in `data.json` in this folder (created automatically).
+- Back up the folder to keep your records.
+
+## Requirements
+
+- macOS 10.13+
+- Python 3 (comes with Xcode Command Line Tools: `xcode-select --install`)
