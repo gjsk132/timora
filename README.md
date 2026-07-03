@@ -16,6 +16,14 @@ The interface is available in **English and Korean** — switch anytime from
 
 > macOS only. (It does not run on Windows.)
 
+## Screenshots
+
+<p align="center">
+  <img src="assets/screenshot-report.png" alt="Timora detailed view" width="420">
+</p>
+
+<p align="center"><em>Detailed view — daily log, trend chart, and estimate vs. actual.</em></p>
+
 ## Download
 
 **[⬇︎ Get the latest release](https://github.com/gjsk132/timora/releases/latest)** — grab `Timora-<version>.zip`.

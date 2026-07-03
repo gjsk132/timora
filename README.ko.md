@@ -15,6 +15,14 @@ macOS 메뉴바에서 돌아가는 시간 기록 앱입니다. 할 일을 등록
 
 > macOS 전용입니다. (윈도우에서는 동작하지 않아요.)
 
+## 스크린샷
+
+<p align="center">
+  <img src="assets/screenshot-report.png" alt="Timora 상세 보기" width="420">
+</p>
+
+<p align="center"><em>상세 보기 — 하루 기록, 추이 그래프, 예상 대비 실제.</em></p>
+
 ## 다운로드
 
 **[⬇︎ 최신 릴리스 받기](https://github.com/gjsk132/timora/releases/latest)** — `Timora-<버전>.zip` 을 받으세요.
