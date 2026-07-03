@@ -1,5 +1,10 @@
 # Timora
 
+[![최신 릴리스](https://img.shields.io/github/v/release/gjsk132/timora?label=release&sort=semver)](https://github.com/gjsk132/timora/releases/latest)
+[![다운로드](https://img.shields.io/github/downloads/gjsk132/timora/total?label=downloads)](https://github.com/gjsk132/timora/releases)
+[![License: MIT](https://img.shields.io/github/license/gjsk132/timora)](LICENSE)
+![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey)
+
 [English](README.md) · **한국어**
 
 macOS 메뉴바에서 돌아가는 시간 기록 앱입니다. 할 일을 등록해두고 시작/정지로
@@ -10,16 +15,30 @@ macOS 메뉴바에서 돌아가는 시간 기록 앱입니다. 할 일을 등록
 
 > macOS 전용입니다. (윈도우에서는 동작하지 않아요.)
 
+## 다운로드
+
+**[⬇︎ 최신 릴리스 받기](https://github.com/gjsk132/timora/releases/latest)** — `Timora-<버전>.zip` 을 받으세요.
+
 ## 설치 방법
 
-1. 프로젝트를 내려받아(Code → Download ZIP, 또는 `git clone`) 원하는 곳에
-   압축을 풉니다. (홈 폴더나 문서 폴더 추천)
-2. 폴더 안의 **`install.command`** 파일을 **더블클릭**합니다.
+### 방법 A — 릴리스에서 받기 (추천)
+
+1. [최신 릴리스](https://github.com/gjsk132/timora/releases/latest)에서
+   **`Timora-<버전>.zip`** 을 받아 원하는 곳(홈·문서 폴더 추천)에 압축을 풉니다.
+2. 압축을 푼 `timora` 폴더에서 **`install.command`** 를 더블클릭합니다.
    - "확인되지 않은 개발자" 경고가 뜨면: **우클릭 → 열기 → 열기** 를 누르세요.
-3. 터미널 창이 열리고 자동으로 설치가 진행됩니다. (1~2분)
-   - `python3 not found` 라고 나오면, 터미널에 `xcode-select --install` 을 실행해
-     개발자 도구를 먼저 깔고, 다시 `install.command` 를 더블클릭하세요.
+3. 터미널 창이 열리고 자동으로 설치됩니다. (1~2분)
+   - `python3 not found` 라고 나오면, 터미널에 `xcode-select --install` 을 실행한 뒤
+     다시 `install.command` 를 더블클릭하세요.
 4. "Done!" 이 뜨면 끝!
+
+### 방법 B — 소스에서
+
+```bash
+git clone git@github.com:gjsk132/timora.git
+cd timora
+./install.command
+```
 
 ## 실행 방법
 
@@ -42,6 +61,7 @@ macOS 메뉴바에서 돌아가는 시간 기록 앱입니다. 할 일을 등록
 ```
 Timora.app/        macOS 앱 번들 (timora 패키지를 실행)
 install.command    원클릭 설치: venv 생성 + 의존성 설치
+release.sh         관리자용: 태그·zip 빌드·GitHub 릴리스 게시
 requirements.txt   파이썬 의존성 (rumps, pyobjc)
 timora/            애플리케이션 패키지
 ├── __main__.py    진입점 (python -m timora)

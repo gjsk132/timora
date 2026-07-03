@@ -1,5 +1,10 @@
 # Timora
 
+[![Latest release](https://img.shields.io/github/v/release/gjsk132/timora?label=release&sort=semver)](https://github.com/gjsk132/timora/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/gjsk132/timora/total?label=downloads)](https://github.com/gjsk132/timora/releases)
+[![License: MIT](https://img.shields.io/github/license/gjsk132/timora)](LICENSE)
+![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey)
+
 **English** · [한국어](README.ko.md)
 
 A native macOS menu bar time tracker. Register your tasks, start/stop a timer
@@ -11,16 +16,31 @@ The interface is available in **English and Korean** — switch anytime from
 
 > macOS only. (It does not run on Windows.)
 
+## Download
+
+**[⬇︎ Get the latest release](https://github.com/gjsk132/timora/releases/latest)** — grab `Timora-<version>.zip`.
+
 ## Install
 
-1. Download the project (Code → Download ZIP, or `git clone`) and unzip it
-   somewhere convenient (your home or Documents folder works well).
-2. Double-click **`install.command`** inside the folder.
+### Option A — From the release (recommended)
+
+1. Download **`Timora-<version>.zip`** from the
+   [latest release](https://github.com/gjsk132/timora/releases/latest) and unzip it
+   somewhere convenient (your Home or Documents folder works well).
+2. Open the unzipped `timora` folder and double-click **`install.command`**.
    - If macOS says "unidentified developer": **right-click → Open → Open**.
-3. A Terminal window opens and installs everything automatically (1–2 min).
-   - If it says `python3 not found`, run `xcode-select --install` in Terminal
-     to install the developer tools, then double-click `install.command` again.
+3. A Terminal window installs everything automatically (1–2 min).
+   - If it says `python3 not found`, run `xcode-select --install` in Terminal,
+     then double-click `install.command` again.
 4. When you see "Done!", you're set.
+
+### Option B — From source
+
+```bash
+git clone git@github.com:gjsk132/timora.git
+cd timora
+./install.command
+```
 
 ## Run
 
@@ -43,6 +63,7 @@ Open the menu bar icon → **Settings**:
 ```
 Timora.app/        macOS app bundle (launches the timora package)
 install.command    one-click setup: creates venv + installs deps
+release.sh         maintainer tool: tag, build zip, publish a GitHub release
 requirements.txt   Python dependencies (rumps, pyobjc)
 timora/            application package
 ├── __main__.py    entry point (python -m timora)
